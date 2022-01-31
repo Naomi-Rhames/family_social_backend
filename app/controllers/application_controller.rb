@@ -7,5 +7,13 @@ class ApplicationController < ActionController::API
 
 
     private
+    
+    def fetch_token
+        request.headers["Authorization"]
+    end
 
+    def decodeed_user_token
+        JWT.decode(fetch_user_token, ENV["JWT_SECRET"])[0]
+    end
+    
 end
