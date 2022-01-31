@@ -4,10 +4,13 @@ class ApplicationController < ActionController::API
         JWT.endcode({user_id: user_id}, ENV["JWT_SECRET"])
     end
 
+    def render_token(user)
+        render json: {user: ActiveModelSerializers::SerializableResource.new(user, serializer: UserSerializer), token: encode_token(user.id) }
+    end
 
 
     private
-    
+
     def fetch_token
         request.headers["Authorization"]
     end
