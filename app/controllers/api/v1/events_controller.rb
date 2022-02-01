@@ -1,6 +1,6 @@
 module Api
     module V1
-        class EventsController < ApplicationController
+        class  Api::V1::EventsController < ApplicationController
             
         end
     end
