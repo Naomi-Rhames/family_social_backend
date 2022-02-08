@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
     end
 
     def render_token(user)
-        render json: {user: ActiveModelSerializers::SerializableResource.new(user, serializer: UserSerializer), token: encode_token(user.id) }
+        render json: { user: ActiveModelSerializers::SerializableResource.new(user, serializer: UserSerializer), token: encode_token(user.id) }
     end
 
 

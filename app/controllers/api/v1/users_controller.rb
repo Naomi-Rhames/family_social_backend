@@ -15,7 +15,6 @@ module Api
             def index
                 user = User.all
                 render json: UserSerializer.new(user)
-                # UserSerializer
             end
 
 
